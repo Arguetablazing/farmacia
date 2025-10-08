@@ -9,7 +9,6 @@
         <label for="rol">Rol</label>
         <select name="rol" id="rol" class="form-control" required>
             <option value="">Seleccione un rol</option>
-            <option value="Funcionario">Funcionario</option>
             <option value="Empleado">Empleado</option>
             <option value="Cajero">Cajero</option>
             <option value="Administrador">Administrador</option>

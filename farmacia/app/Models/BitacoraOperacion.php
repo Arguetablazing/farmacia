@@ -10,13 +10,19 @@ class BitacoraOperacion extends Model
     use HasFactory;
 
     protected $table = 'bitacora_operaciones';
+
     protected $fillable = [
         'id_usuario',
         'operacion',
         'fecha'
     ];
 
-    // Relación con usuarios
+    // Para que Laravel convierta 'fecha' a instancia de Carbon automáticamente
+    protected $casts = [
+        'fecha' => 'datetime',
+    ];
+
+    // Relación con Usuario
     public function usuario()
     {
         return $this->belongsTo(Usuario::class, 'id_usuario');

@@ -9,7 +9,7 @@
     <div class="mb-3">
         <label for="rol">Rol</label>
         <select name="rol" class="form-control" required>
-            <option value="Funcionario" {{ $rolPermiso->rol == 'Funcionario' ? 'selected' : '' }}>Funcionario</option>
+
             <option value="Empleado" {{ $rolPermiso->rol == 'Empleado' ? 'selected' : '' }}>Empleado</option>
             <option value="Cajero" {{ $rolPermiso->rol == 'Cajero' ? 'selected' : '' }}>Cajero</option>
             <option value="Administrador" {{ $rolPermiso->rol == 'Administrador' ? 'selected' : '' }}>Administrador</option>

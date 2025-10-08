@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class DetalleFactura extends Model
 {
-    use HasFactory;
-
-    protected $table = 'detalle_factura';  // Nombre exacto de la tabla en la DB
+    // Especifica el nombre exacto de la tabla
+    protected $table = 'detalle_factura';
 
     protected $fillable = [
         'id_factura',
@@ -19,15 +17,15 @@ class DetalleFactura extends Model
         'subtotal',
     ];
 
-    // Relación con el producto
-    public function producto()
-    {
-        return $this->belongsTo(Producto::class, 'id_producto');
-    }
-
-    // Relación con la factura (opcional si la necesitas)
+    // Relación con factura
     public function factura()
     {
         return $this->belongsTo(Factura::class, 'id_factura');
+    }
+
+    // Relación con producto
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class, 'id_producto');
     }
 }

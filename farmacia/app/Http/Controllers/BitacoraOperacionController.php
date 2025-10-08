@@ -9,7 +9,11 @@ class BitacoraOperacionController extends Controller
 {
     public function index()
     {
-        $bitacoras = BitacoraOperacion::all();
+        // Trae bitácoras con la relación usuario y ordenadas por fecha descendente, paginadas
+        $bitacoras = BitacoraOperacion::with('usuario')
+            ->orderBy('fecha', 'desc')
+            ->paginate(10);
+
         return view('bitacora-operaciones.index', compact('bitacoras'));
     }
 

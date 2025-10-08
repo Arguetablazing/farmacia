@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Usuario extends Model
 {
@@ -11,7 +11,11 @@ class Usuario extends Model
 
     protected $table = 'usuarios';
 
-    protected $fillable = ['nombre', 'correo', 'contraseña', 'rol', 'estado'];
-
-    protected $hidden = ['contraseña'];
+    protected $fillable = [
+        'nombre',
+        'correo',
+        'contraseña',
+        'rol',
+        'estado',
+    ];
 }
